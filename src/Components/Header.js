@@ -7,14 +7,19 @@ import {
   Form,
   Button,
 } from "react-bootstrap";
-import logo192 from "./logo192.png"; // Исправлен путь к файлу
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from "../Pages/Home";
+import Contacts from "../Pages/Contacts";
+import About from "../Pages/About";
+import Blog from "../Pages/Blog";
+import logo192 from "./logo192.png";
 
 export default class Header extends Component {
   render() {
     return (
       <>
         <Navbar
-          fixed="top"
+          // fixed="top"
           collapseOnSelect
           expand="md"
           bg="dark"
@@ -29,17 +34,16 @@ export default class Header extends Component {
                 className="d-inline-block align-top"
                 alt="Logo"
               />{" "}
-              React site
+              PIOZ-21
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
-                <Nav.Link href="/about">About us</Nav.Link>
+                <Nav.Link href="/about">About</Nav.Link>
                 <Nav.Link href="/contacts">Contacts</Nav.Link>
                 <Nav.Link href="/blog">Blog</Nav.Link>
               </Nav>
-
               <Form inline>
                 <FormControl
                   type="text"
@@ -47,13 +51,21 @@ export default class Header extends Component {
                   className="mr-sm-2"
                 />
               </Form>
-
               <Nav>
                 <Button variant="outline-info">Search</Button>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
+
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/contacts" component={Contacts} />
+            <Route exact path="/blog" component={Blog} />
+          </Switch>
+        </Router>
       </>
     );
   }
