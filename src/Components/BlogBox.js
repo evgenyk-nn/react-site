@@ -2,7 +2,6 @@ import React, { Component, useState } from "react";
 import { Button, Form, Col, Row } from "react-bootstrap";
 import PostList from "../Components/PostList";
 import MyInput from "../Components/UI/input/MyInput";
-import "../App.css";
 
 export default class BlogBox extends Component {
   state = {
