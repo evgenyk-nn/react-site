@@ -1,3 +1,4 @@
+/* Общие стили */
 .App {
   text-align: center;
 }
@@ -22,6 +23,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 100%;
 }
 
 .App-link {
@@ -36,6 +38,104 @@
     transform: rotate(360deg);
   }
 }
+
 body {
   height: 2000px;
+}
+
+/* Стили для .App, .post, медиа-запроса и других элементов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 15px;
+}
+
+.post {
+  display: flex;
+  padding: 15px;
+  border: 2px solid teal;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .post {
+    flex-direction: column;
+  }
+}
+
+/* Стили для компонента AboutBox */
+.Container {
+  padding: 20px;
+}
+
+.Tab.Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Tab.Container .Row {
+  flex-direction: column;
+}
+
+.Nav {
+  width: 100%;
+}
+
+.Col {
+  margin-top: 15px;
+}
+
+/* Дополнительные стили для адаптивности */
+@media (max-width: 768px) {
+  .Tab.Container .Row {
+    flex-direction: column-reverse;
+  }
+
+  .Col {
+    margin-top: 0;
+  }
+}
+
+/* Стили для изображений внутри Tab.Pane */
+.Tab.Pane img {
+  margin-right: 10px;
+}
+
+/* Дополнительные стили для других элементов, например, .myBtn и .myInput */
+.myBtn {
+  padding: 5px 15px;
+  color: teal;
+  font-size: 14px;
+  background: transparent;
+  border: 1px solid teal;
+  cursor: pointer;
+}
+
+.myInput {
+  width: 100%;
+  padding: 5px 15px;
+  margin: 5px 0;
+  border: 1px solid teal;
+}
+
+/* Значение отступа между формой обратной связи и Header*/
+.FormContainer {
+  margin-top: 40px;
+}
+.roundedForm {
+  border-radius: 20px;
 }
