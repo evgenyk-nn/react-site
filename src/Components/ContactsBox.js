@@ -24,14 +24,22 @@ const ContactsBox = () => {
   return (
     <div
       className="App"
-      style={{ marginTop: "20px", borderRadius: "10px", overflow: "hidden" }}
+      style={{
+        marginTop: "20px",
+        borderRadius: "10px",
+        overflow: "hidden",
+        width: "800px",
+        margin: "0 auto",
+      }}
     >
       {scriptLoaded && (
         <Form>
           <Row>
             <Col md={12}>
               <div className="contacts-header">
+                <div style={{ marginTop: "15px" }}></div>
                 <h1>Контакты</h1>
+                <div style={{ marginTop: "30px" }}></div>
               </div>
               <iframe
                 src="https://forms.yandex.ru/cloud/656c5896c769f196fbaa4159/?iframe=1"

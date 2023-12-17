@@ -2,85 +2,125 @@ import React, { Component } from "react";
 import { Container, Tab, Nav, Row, Col } from "react-bootstrap";
 import "../App.css";
 
+const sections = [
+  {
+    key: "first",
+    title: "Россия",
+    content: (
+      <>
+        <iframe
+          title="Russia"
+          width="100%"
+          height="350"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=36.12579345703126%2C54.909777539554845%2C38.64715576171876%2C56.24792820319822&amp;layer=mapnik"
+          style={{ border: "1px solid teal" }}
+        ></iframe>
+        <br />
+        <small>
+          <a href="https://www.openstreetmap.org/#map=9/55.5842/37.3853">
+            Посмотреть более крупную карту
+          </a>
+        </small>
+      </>
+    ),
+  },
+
+  {
+    key: "second",
+    title: "Беларусь",
+    content: (
+      <>
+        <iframe
+          title="Belarus"
+          width="100%"
+          height="350"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=27.273559570312504%2C53.70768148919932%2C28.179931640625004%2C54.05737271726998&amp;layer=mapnik"
+          style={{ border: "1px solid teal" }}
+        ></iframe>
+        <br />
+        <small>
+          <a href="https://www.openstreetmap.org/#map=11/53.8829/27.7270">
+            Посмотреть более крупную карту
+          </a>
+        </small>
+      </>
+    ),
+  },
+
+  {
+    key: "third",
+    title: "Украина",
+    content: (
+      <>
+        <iframe
+          title="Ukraine"
+          width="100%"
+          height="350"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=30.07781982421875%2C50.212943287278684%2C30.984191894531254%2C50.59108378226446&amp;layer=mapnik"
+          style={{ border: "1px solid teal" }}
+        ></iframe>
+        <br />
+        <small>
+          <a href="https://www.openstreetmap.org/#map=11/50.4024/30.5313">
+            Посмотреть более крупную карту
+          </a>
+        </small>
+      </>
+    ),
+  },
+
+  {
+    key: "fourth",
+    title: "Европа",
+    content: (
+      <>
+        <iframe
+          title="Europe"
+          width="100%"
+          height="400"
+          style={{ border: "1px solid red" }}
+          src="https://www.openstreetmap.org/export/embed.html?bbox=4.3691468238830575%2C50.835838852935936%2C4.397470951080323%2C50.84754585751373&amp;layer=mapnik"
+          style={{ border: "1px solid teal" }}
+        ></iframe>
+        <br />
+        <small>
+          <a href="https://www.openstreetmap.org/#map=16/50.8417/4.3833">
+            Посмотреть более крупную карту
+          </a>
+        </small>
+      </>
+    ),
+  },
+];
+
 export default class AboutBox extends Component {
   render() {
     return (
       <div>
         <Container>
-          <Tab.Container id="ledt-tabs-example" defaultActiveKey="first">
+          <Tab.Container
+            id="left-tabs-example"
+            defaultActiveKey={sections[0].key}
+          >
             <Row>
-              <Col md={2} lg={1}>
+              <Col md={3} lg={2}>
                 <Nav variant="pills" className="Flex-colum mt-2">
-                  <Nav.Item>
-                    <Nav.Link eventKey="first">Design</Nav.Link>
-                  </Nav.Item>
-
-                  <Nav.Item>
-                    <Nav.Link eventKey="second">Team</Nav.Link>
-                  </Nav.Item>
-
-                  <Nav.Item>
-                    <Nav.Link eventKey="third">Programming</Nav.Link>
-                  </Nav.Item>
-
-                  <Nav.Item>
-                    <Nav.Link eventKey="fourth">Frameworks</Nav.Link>
-                  </Nav.Item>
-
-                  <Nav.Item>
-                    <Nav.Link eventKey="fifth">Libraries</Nav.Link>
-                  </Nav.Item>
+                  {sections.map((section) => (
+                    <Nav.Item key={section.key}>
+                      <Nav.Link eventKey={section.key}>
+                        {section.title}
+                      </Nav.Link>
+                    </Nav.Item>
+                  ))}
                 </Nav>
               </Col>
               <Col md={9} lg={10}>
                 <Tab.Content className="mt-3">
-                  <Tab.Pane eventKey="first">
-                    <img
-                      src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/338308523/original/003cc871f5bf08930f0bf221f40dce74e634beea/make-figma-website-website-ui-website-ui-ux-design.png"
-                      className="mr-3"
-                    />
-                    <p>
-                      {" "}
-                      Some text. Some text. Some text. Some text. Some text.
-                      Some text. Some text. Some text. Some text.
-                    </p>
-                  </Tab.Pane>
-
-                  <Tab.Pane eventKey="second">
-                    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/322831328/original/11c82a65991aed1e26a0a54d202a0f95c7619fb3/do-a-professional-ui-ux-web-design-for-your-website-with-figma.png" />
-                    <p>
-                      {" "}
-                      Some text. Some text. Some text. Some text. Some text.
-                      Some text. Some text. Some text. Some text.
-                    </p>
-                  </Tab.Pane>
-
-                  <Tab.Pane eventKey="third">
-                    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/275368757/original/81b6946e0b20dea0502492ea02d7619b2be6cf2d/modern-website-ui-mobile-app-ui-landing-page-ui-ux-design-in-figma.png" />
-                    <p>
-                      {" "}
-                      Some text. Some text. Some text. Some text. Some text.
-                      Some text. Some text. Some text. Some text.
-                    </p>
-                  </Tab.Pane>
-
-                  <Tab.Pane eventKey="fourth">
-                    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/322831328/original/11c82a65991aed1e26a0a54d202a0f95c7619fb3/do-a-professional-ui-ux-web-design-for-your-website-with-figma.png" />
-                    <p>
-                      {" "}
-                      Some text. Some text. Some text. Some text. Some text.
-                      Some text. Some text. Some text. Some text.
-                    </p>
-                  </Tab.Pane>
-
-                  <Tab.Pane eventKey="fifth">
-                    <img src="https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/249609104/original/9d9eaa355aedd33f6365849f2a4fb85bcc88c1b8/do-a-modern-figma-website-design-figma-web-design.png" />
-                    <p>
-                      {" "}
-                      Some text. Some text. Some text. Some text. Some text.
-                      Some text. Some text. Some text. Some text.
-                    </p>
-                  </Tab.Pane>
+                  {sections.map((section) => (
+                    <Tab.Pane key={section.key} eventKey={section.key}>
+                      {section.content}
+                    </Tab.Pane>
+                  ))}
                 </Tab.Content>
               </Col>
             </Row>

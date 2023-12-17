@@ -9,10 +9,9 @@ import {
 } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "../Pages/Home";
-import Contacts from "../Pages/Contacts";
 import About from "../Pages/About";
-import About2 from "../Pages/About2";
-import About3 from "../Pages/About3";
+import Contacts from "../Pages/Contacts";
+import ContactsMy from "../Pages/ContactsMy";
 import Blog from "../Pages/Blog";
 import logo192 from "./logo192.png";
 
@@ -43,9 +42,8 @@ export default class Header extends Component {
               <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About</Nav.Link>
-                <Nav.Link href="/about2">About2</Nav.Link>
-                <Nav.Link href="/about3">About3</Nav.Link>
-                <Nav.Link href="/contacts">Contacts</Nav.Link>
+                <Nav.Link href="/contacts-my">Contacts-my</Nav.Link>
+                <Nav.Link href="/contacts-yandex">Contacts-yandex</Nav.Link>
                 <Nav.Link href="/blog">Blog</Nav.Link>
               </Nav>
               <Form inline>
@@ -66,9 +64,8 @@ export default class Header extends Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/about2" component={About2} />
-            <Route exact path="/about3" component={About3} />
-            <Route exact path="/contacts" component={Contacts} />
+            <Route exact path="/contacts-my" component={ContactsMy} />
+            <Route exact path="/contacts-yandex" component={Contacts} />
             <Route exact path="/blog" component={Blog} />
           </Switch>
         </Router>
